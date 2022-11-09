@@ -2,6 +2,7 @@
 //variables
 const form = document.getElementById("addForm");
 const todoList = document.getElementById("items");
+const delList = document.getElementsByClassName("list-group-item");
 
 
 
@@ -9,7 +10,7 @@ const todoList = document.getElementById("items");
 
 //event listeners
 form.addEventListener('submit',addTodo);
-
+todoList.addEventListener('click',delToDo);
 
 
 //functions
@@ -41,6 +42,15 @@ function addTodo(e){
     todoList.append(li);
     
 }
+
+function delToDo(e){
+    if(e.target.classList.contains("delete")){
+         if(confirm('Are you sure?')){
+             let li = e.target.parentElement.remove();
+             // todoList.removeChild(li);
+         }
+    }
+ }
 
 
 
