@@ -13,6 +13,7 @@ const filter = document.getElementById('filter');
 form.addEventListener('submit',addTodo);
 todoList.addEventListener('click',delToDo);
 filter.addEventListener('keyup',filterToDo);
+todoList.addEventListener('click',editToDo);
 
 
 //functions
@@ -66,6 +67,22 @@ function delToDo(e){
         }
         
     });
+}
+
+function editToDo(e){
+    if(e.target.classList.contains("edit")){
+
+        let content =  e.target.parentElement.firstChild.textContent; //storing the to-do item in an variable
+        if(confirm('Are you sure?')){
+            let li = prompt("Please enter your response", "");
+            if(li==""){
+                li = prompt("Please enter your response", "");
+            }
+            e.target.parentElement.firstChild.textContent = li;
+             
+        }
+
+   }
 }
 
 
