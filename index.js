@@ -75,11 +75,15 @@ function editToDo(e){
         let content =  e.target.parentElement.firstChild.textContent; //storing the to-do item in an variable
         if(confirm('Are you sure?')){
             let li = prompt("Please enter your response", "");
-            if(li==""){
-                li = prompt("Please enter your response", "");
+            while(li===""){
+                li = prompt("Please enter a valid response", "");
             }
-            e.target.parentElement.firstChild.textContent = li;
-             
+            if(li===null){
+                e.target.parentElement.firstChild.textContent = content;
+            }else{
+                e.target.parentElement.firstChild.textContent = li;
+            }
+            
         }
 
    }
