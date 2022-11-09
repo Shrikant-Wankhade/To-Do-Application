@@ -47,6 +47,8 @@ function addTodo(e){
 
     //append that list into the ul
     todoList.append(li);
+    let newItem2 = document.getElementById('item');
+    newItem2.value = "";
     
 }
 
