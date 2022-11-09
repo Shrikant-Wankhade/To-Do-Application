@@ -1,0 +1,11 @@
+.list-group-item{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+}
+
+.edit{
+    position:absolute;
+    right:100px;
+}
