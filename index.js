@@ -31,15 +31,19 @@ function addTodo(e){
     li.textContent = newItem;
     //create a new delete button
     let deleteBtn = document.createElement('button');
+    let editBtn = document.createElement('button');
 
     //add classes to button
     deleteBtn.className = 'btn btn-danger btn-sm float-end delete';
+    editBtn.className = 'btn btn-sm btn-secondary edit';
 
     //add the text to delete button
     deleteBtn.textContent = 'Delete';
+    editBtn.textContent = 'Edit';
 
     //append the button into the list
     li.appendChild(deleteBtn);
+    li.appendChild(editBtn);
 
     //append that list into the ul
     todoList.append(li);
