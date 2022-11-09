@@ -3,6 +3,7 @@
 const form = document.getElementById("addForm");
 const todoList = document.getElementById("items");
 const delList = document.getElementsByClassName("list-group-item");
+const filter = document.getElementById('filter');
 
 
 
@@ -11,6 +12,7 @@ const delList = document.getElementsByClassName("list-group-item");
 //event listeners
 form.addEventListener('submit',addTodo);
 todoList.addEventListener('click',delToDo);
+filter.addEventListener('keyup',filterToDo);
 
 
 //functions
@@ -51,6 +53,20 @@ function delToDo(e){
          }
     }
  }
+
+ function filterToDo(e){
+    let input = e.target.value.toLowerCase();
+    let todos = todoList.getElementsByTagName('li');
+    Array.from(todos).forEach(ele => {
+        let text = ele.firstChild.textContent.toLowerCase();
+        if(text.includes(input)){
+            ele.style.display = 'block';
+        }else{
+            ele.style.display = 'none';
+        }
+        
+    });
+}
 
 
 
